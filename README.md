@@ -1,4 +1,4 @@
-# 🚀 Nucleus HR
+# 🚀 CogniShift
 
 > AI-powered multi-tenant HR management platform built with Laravel, Vue 3, Inertia.js, and Tailwind CSS.
 
