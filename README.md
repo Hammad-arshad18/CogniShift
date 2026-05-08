@@ -3,7 +3,7 @@ readme_content = """# 🧬 CogniShift (Next-Gen AI-Powered HRMS)
 
 > An open-source, multi-tenant Human Resources Management System that puts Artificial Intelligence at the core of business logic. Go beyond simple data storage with predictive insights, natural language reporting, and smart automation.
 
-![Tech Stack](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 ![Tech Stack](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
 ![Tech Stack](https://img.shields.io/badge/Inertia.js-9553E9?style=for-the-badge&logo=inertia&logoColor=white)
 ![Tech Stack](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
