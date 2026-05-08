@@ -1,66 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+```python
+readme_content = """# 🧬 CogniShift (Next-Gen AI-Powered HRMS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> An open-source, multi-tenant Human Resources Management System that puts Artificial Intelligence at the core of business logic. Go beyond simple data storage with predictive insights, natural language reporting, and smart automation.
 
-## About Laravel
+![Tech Stack](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Tech Stack](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![Tech Stack](https://img.shields.io/badge/Inertia.js-9553E9?style=for-the-badge&logo=inertia&logoColor=white)
+![Tech Stack](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Tech Stack](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Core Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🏢 Robust Multi-Tenancy
+- **Single Centralized Database:** Powered by PostgreSQL with strict row-level security and `tenant_id` scoping to prevent data bleed.
+- **Global Super Admin:** Control subscriptions, suspend instances, and manage features.
+- **Feature-Flag Architecture:** Features are conditionally locked via middleware based on the tenant's plan tier (Basic, Pro, Enterprise).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🧠 AI & Advanced Analytics (The Differentiator)
+- **Natural Language Reporting:** Type queries like *"Show me overtime costs for Q3"* and let the AI generate the SQL, execute safely, and render a dynamic Vue.js chart.
+- **Predictive Burnout Analysis:** The system proactively flags employees with high burnout probability based on historical overtime, attendance, and leave requests.
+- **Payroll Anomaly Detection:** Catch errors before they happen. The AI scans payroll batches for unusual spikes or buddy-punching patterns.
+- **Generative Performance Reviews:** Managers input rough bullet points, and the AI drafts professional, structured quarterly reviews.
 
-## Learning Laravel
+### ⏱️ Modern Attendance & Payroll
+- **Omnichannel Clock-in:** Geofenced mobile punches, biometric web integration, and standard web portals.
+- **Automated Timesheet Reconciliation:** Auto-pairs punches with shifts, calculates overtime dynamically based on tenant-defined rules, and flags exceptions.
+- **Dynamic Payroll Engine:** One-click batch processing with automated proration and localized deductions.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Getting Started
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
+- PHP 8.2+
+- Composer
+- Node.js & NPM 18+
+- PostgreSQL
+- Redis (for Laravel Horizon / AI Queue processing)
+- OpenAI API Key (or Anthropic API Key)
 
-## Laravel Sponsors
+### Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone the repository:**
 
-### Premium Partners
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```text
+File generated successfully.
 
-## Contributing
+```bash
+   git clone [https://github.com/your-username/nucleus-hr.git](https://github.com/your-username/nucleus-hr.git)
+   cd nucleus-hr
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
 
-## Code of Conduct
+2. **Install PHP and Node dependencies:**
+```bash
+composer install
+npm install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Environment Setup:**
+```bash
+cp .env.example .env
+php artisan key:generate
 
-## License
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+*Make sure to configure your database (`DB_CONNECTION=pgsql`), Redis, and add your AI provider API key in the `.env` file:*
+```env
+OPENAI_API_KEY=your_api_key_here
+
+```
+
+
+4. **Run Migrations & Seeders:**
+```bash
+php artisan migrate --seed
+
+```
+
+
+5. **Start the Development Servers:**
+```bash
+# Terminal 1: Laravel backend
+php artisan serve
+
+# Terminal 2: Vite frontend
+npm run dev
+
+# Terminal 3: Background workers (Horizon)
+php artisan horizon
+
+```
+
+
+
+---
+
+## 🏗️ Architecture Notes
+
+* **Frontend:** Built completely with Vue 3 (Composition API) and styled with Tailwind CSS. Inertia.js acts as the glue, eliminating the need for a separate REST API to feed the frontend.
+* **Multi-Tenancy Setup:** Every model belonging to a tenant uses a global `TenantScope`. Always ensure `tenant_id` is passed upon creation.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Since this is a public repository, feel free to check the [issues page](https://www.google.com/search?q=../../issues).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 👨‍💻 Author
+
+**Hammad Arshad**
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+"""
+
+with open('README.md', 'w', encoding='utf-8') as f:
+f.write(readme_content)
+
+print("File generated successfully.")
+
+```
+Your Markdown file is ready
+[file-tag: code-generated-file-0-1778226836422520794]
+
+The `README.md` file is structured to be immediately impactful for an open-source GitHub repository. It clearly highlights the unique AI differentiators, provides the necessary technical setup instructions for the Laravel and Vue stack, and sets a professional tone for potential contributors. You can drop this directly into the root of your project directory. Let me know if you need any adjustments to the installation steps or specific badges!
+
+```
