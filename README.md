@@ -3,7 +3,7 @@
 > AI-powered multi-tenant HR management platform built with Laravel, Vue 3, Inertia.js, and Tailwind CSS.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel-12.x-red?style=for-the-badge&logo=laravel" />
+  <img src="https://img.shields.io/badge/Laravel-11.x-red?style=for-the-badge&logo=laravel" />
   <img src="https://img.shields.io/badge/Vue-3.x-42b883?style=for-the-badge&logo=vue.js" />
   <img src="https://img.shields.io/badge/Inertia.js-Fullstack-purple?style=for-the-badge" />
   <img src="https://img.shields.io/badge/TailwindCSS-Modern_UI-38bdf8?style=for-the-badge&logo=tailwindcss" />
@@ -16,6 +16,7 @@
 # ✨ Features
 
 ## 🧠 AI-Powered HR Automation
+
 - AI-generated HR insights
 - Smart employee analytics
 - Automated workflows & recommendations
@@ -23,12 +24,14 @@
 - OpenAI / Anthropic integration support
 
 ## 🏢 Multi-Tenant Architecture
+
 - Secure tenant isolation
 - Global tenant scoping
 - Scalable SaaS-ready structure
 - Tenant-aware data handling
 
 ## ⚡ Modern Full-Stack Experience
+
 - Laravel backend
 - Vue 3 Composition API frontend
 - Inertia.js SPA experience without REST APIs
@@ -36,6 +39,7 @@
 - Vite-powered development workflow
 
 ## 🔒 Enterprise Ready
+
 - Queue management with Horizon
 - PostgreSQL optimized
 - Redis-powered background processing
@@ -46,15 +50,15 @@
 
 # 🛠️ Tech Stack
 
-| Layer | Technology |
-|------|-------------|
-| Backend | Laravel 12 |
-| Frontend | Vue 3 |
-| SPA Bridge | Inertia.js |
-| Styling | Tailwind CSS |
-| Database | PostgreSQL |
-| Queue System | Redis + Horizon |
-| Build Tool | Vite |
+| Layer        | Technology         |
+| ------------ | ------------------ |
+| Backend      | Laravel 11         |
+| Frontend     | Vue 3              |
+| SPA Bridge   | Inertia.js         |
+| Styling      | Tailwind CSS       |
+| Database     | PostgreSQL         |
+| Queue System | Redis + Horizon    |
+| Build Tool   | Vite               |
 | AI Providers | OpenAI / Anthropic |
 
 ---
@@ -80,8 +84,8 @@ Before you begin, ensure you have the following installed:
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/nucleus-hr.git
-cd nucleus-hr
+git clone https://github.com/Hammad-arshad18/CogniShift.git
+cd CogniShift
 ```
 
 ---
@@ -125,12 +129,12 @@ Update your `.env` file:
 ```env
 APP_NAME="Nucleus HR"
 
-DB_CONNECTION=pgsql
+DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=nucleus_hr
-DB_USERNAME=postgres
-DB_PASSWORD=password
+DB_PORT=3306
+DB_DATABASE=employee_management
+DB_USERNAME=root
+DB_PASSWORD=
 
 REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
