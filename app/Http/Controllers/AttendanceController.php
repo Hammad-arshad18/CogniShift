@@ -44,4 +44,10 @@ class AttendanceController extends Controller
 
         return redirect()->back()->with('message', 'Attendance updated successfully.');
     }
+
+    public function destroy(Attendance $attendance)
+    {
+        $attendance->delete();
+        return redirect()->back()->with('message', 'Attendance deleted successfully.');
+    }
 }

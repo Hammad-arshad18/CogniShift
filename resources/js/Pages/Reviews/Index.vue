@@ -23,6 +23,29 @@ const statusMap = {
     generated: { bg: 'rgba(99,102,241,0.12)',  color: '#818cf8' },
     finalized: { bg: 'rgba(16,185,129,0.12)',  color: '#10b981' },
 };
+
+const showEditModal = ref(false);
+const editingReview = ref(null);
+const editForm = useForm({ ai_generated_review: '', status: '' });
+
+const openEdit = (review) => {
+    editingReview.value = review;
+    editForm.ai_generated_review = review.ai_generated_review || '';
+    editForm.status = review.status;
+    showEditModal.value = true;
+};
+
+const submitEdit = () => {
+    editForm.put(route('reviews.update', editingReview.value.id), {
+        onSuccess: () => { showEditModal.value = false; editForm.reset(); },
+    });
+};
+
+const destroy = (id) => {
+    if (confirm('Delete this review?')) {
+        useForm({}).delete(route('reviews.destroy', id));
+    }
+};
 </script>
 
 <template>
@@ -100,6 +123,37 @@ const statusMap = {
             </div>
         </div>
 
+        <!-- Edit Modal -->
+        <div v-if="showEditModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" @click.self="showEditModal = false">
+            <div class="w-full max-w-2xl rounded-2xl p-7 shadow-2xl" style="background: #0d1424; border: 1px solid rgba(255,255,255,0.1);">
+                <h3 class="text-lg font-bold text-white mb-5">Edit Review</h3>
+                <form @submit.prevent="submitEdit" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1.5">AI Generated Review</label>
+                        <textarea v-model="editForm.ai_generated_review" rows="8" required
+                            class="w-full px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"
+                            style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1.5">Status</label>
+                        <select v-model="editForm.status" required class="w-full px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+                            <option value="pending">Pending</option>
+                            <option value="generated">Generated</option>
+                            <option value="finalized">Finalized</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-end gap-3 pt-1">
+                        <button type="button" @click="showEditModal = false" class="px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-white rounded-xl hover:bg-white/5 transition">Cancel</button>
+                        <button type="submit" :disabled="editForm.processing"
+                            class="px-5 py-2.5 text-sm font-semibold text-white rounded-xl transition"
+                            style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                            Update Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!-- Review Cards Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div v-for="review in reviews" :key="review.id"
@@ -150,7 +204,11 @@ const statusMap = {
                 <!-- Footer -->
                 <div class="flex items-center justify-between pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
                     <span class="text-xs text-slate-600">{{ review.created_at }}</span>
-                    <button class="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition">Export PDF →</button>
+                    <div class="flex items-center gap-3">
+                        <button @click.stop="openEdit(review)" class="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition">Edit</button>
+                        <button @click.stop="destroy(review.id)" class="text-xs font-medium text-red-400 hover:text-red-300 transition">Delete</button>
+                        <button class="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition">Export PDF →</button>
+                    </div>
                 </div>
             </div>
 

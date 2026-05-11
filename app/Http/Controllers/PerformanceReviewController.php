@@ -43,4 +43,22 @@ class PerformanceReviewController extends Controller
 
         return redirect()->back()->with('message', 'AI Performance Review Generated Successfully.');
     }
+
+    public function update(Request $request, PerformanceReview $review)
+    {
+        $validated = $request->validate([
+            'ai_generated_review' => 'required|string',
+            'status' => 'required|string',
+        ]);
+
+        $review->update($validated);
+
+        return redirect()->back()->with('message', 'Review updated successfully.');
+    }
+
+    public function destroy(PerformanceReview $review)
+    {
+        $review->delete();
+        return redirect()->back()->with('message', 'Review deleted successfully.');
+    }
 }

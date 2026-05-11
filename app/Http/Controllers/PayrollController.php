@@ -47,4 +47,10 @@ class PayrollController extends Controller
 
         return redirect()->back()->with('message', 'Payroll record updated successfully.');
     }
+
+    public function destroy(PayrollRecord $payroll)
+    {
+        $payroll->delete();
+        return redirect()->back()->with('message', 'Payroll record deleted successfully.');
+    }
 }

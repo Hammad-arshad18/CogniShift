@@ -16,6 +16,7 @@ class EmployeeController extends Controller
             'employees' => Employee::with(['user', 'department', 'role'])->latest()->get(),
             'departments' => Department::all(),
             'roles' => Role::all(),
+            'users' => \App\Models\User::whereNotIn('id', Employee::pluck('user_id'))->get(),
         ]);
     }
 

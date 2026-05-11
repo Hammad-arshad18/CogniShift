@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     // Performance Reviews with AI
     Route::get('performance-reviews', [\App\Http\Controllers\PerformanceReviewController::class, 'index'])->name('reviews.index');
     Route::post('performance-reviews/generate', [\App\Http\Controllers\PerformanceReviewController::class, 'generate'])->name('reviews.generate');
+    Route::put('performance-reviews/{review}', [\App\Http\Controllers\PerformanceReviewController::class, 'update'])->name('reviews.update');
+    Route::delete('performance-reviews/{review}', [\App\Http\Controllers\PerformanceReviewController::class, 'destroy'])->name('reviews.destroy');
 });
 
 require __DIR__.'/auth.php';
